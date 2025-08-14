@@ -1,28 +1,15 @@
 function totalFine(fare) {
-  let isNumber = typeof fare === "number";
-  let isPositive = fare > 0;
-
-  if (!isNumber || !isPositive) {
-    return "Invalid";
-  }
-
-  let surcharge = fare * 0.2;
-  let serviceCharge = 30;
-  let total = fare + surcharge + serviceCharge;
-
+  if (typeof fare !== "number" || fare <= 0) return "Invalid";
+  let total = fare + fare * 0.2 + 30;
   return total;
 }
 
 function onlyCharacter(str) {
-  let isString = typeof str === "string";
-  if (!isString) {
+  if (typeof str !== "string") {
     return "Invalid";
   }
-
-  let split = str.split(" ");
-  let join = split.join("");
-  let upperText = join.toUpperCase();
-  return upperText;
+  let finalStringUpperCase = str.split(" ").join("").toUpperCase();
+  return finalStringUpperCase;
 }
 
 function bestTeam(player1, player2) {

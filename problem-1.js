@@ -1,15 +1,7 @@
 function totalFine(fare) {
-  var isNumber = typeof fare === "number";
-  var isPositive = fare > 0;
-
-  if (!isNumber || !isPositive) {
-    return "Invalid";
-  }
-
-  var surcharge = fare * (20 / 100);
-  var serviceCharge = 30;
-  var total = fare + surcharge + serviceCharge;
-
-  return total;
+  if (typeof fare !== "number" || fare <= 0) return "Invalid";
+  let totalFine = fare + fare * 0.2 + 30;
+  return totalFine;
 }
-console.log(totalFine(-35)); // 150
+
+console.log(totalFine(552)); // 150
