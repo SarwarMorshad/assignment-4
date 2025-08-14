@@ -1,14 +1,14 @@
 function totalFine(fare) {
-  var isNumber = typeof fare === "number";
-  var isPositive = fare > 0;
+  let isNumber = typeof fare === "number";
+  let isPositive = fare > 0;
 
   if (!isNumber || !isPositive) {
     return "Invalid";
   }
 
-  var surcharge = fare * (20 / 100);
-  var serviceCharge = 30;
-  var total = fare + surcharge + serviceCharge;
+  let surcharge = fare * 0.2;
+  let serviceCharge = 30;
+  let total = fare + surcharge + serviceCharge;
 
   return total;
 }
@@ -60,4 +60,31 @@ function isSame(arr1, arr2) {
   }
 
   return true;
+}
+
+function resultReport(marks) {
+  if (!Array.isArray(marks)) {
+    return "Invalid";
+  }
+
+  if (marks.length === 0) {
+    return { finalScore: 0, pass: 0, fail: 0 };
+  }
+
+  let total = 0;
+  let passCount = 0;
+  let failCount = 0;
+
+  for (let score of marks) {
+    total += score;
+    if (score >= 40) {
+      passCount++;
+    } else {
+      failCount++;
+    }
+  }
+
+  let average = Math.round(total / marks.length);
+
+  return { finalScore: average, pass: passCount, fail: failCount };
 }

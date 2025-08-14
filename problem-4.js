@@ -17,5 +17,5 @@ function isSame(arr1, arr2) {
 
   return true;
 }
-console.log(isSame([1, 2, 3], [1, 2, 3])); // true
-console.log(isSame([2, 5, 6], 256));
+// console.log(isSame([1, 2, 3], [1, 2, 3])); // true
+// console.log(isSame([2, 5, 6], 256));
